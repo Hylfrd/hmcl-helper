@@ -41,3 +41,4 @@ jobs:
           folder: docs/.vitepress/dist
           single-commit: true
           clean: true
+          token: ${{ secrets.DEPLOY_TOKEN }}  # 使用新的密钥名称
