@@ -21,9 +21,7 @@ jobs:
           ref: "master"
       # 安装pnpm
       - name: Install pnpm
-        run: |
-          corepack enable
-          corepack prepare pnpm@latest --activate
+        run: npm install -g pnpm
       # 安装node环境
       - uses: actions/setup-node@v3
         with:
