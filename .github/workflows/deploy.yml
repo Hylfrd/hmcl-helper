@@ -1,4 +1,4 @@
-name: hmcl-helper deploy workflow
+name: hmcl helper deploy workflow
 
 # 设置触发时机，当推送master分支或者tag到远程时触发
 on:
@@ -44,4 +44,7 @@ jobs:
           single-commit: true
           clean: true
 
-
+作者：前端阿呆
+链接：https://juejin.cn/post/7449006297634848831
+来源：稀土掘金
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
