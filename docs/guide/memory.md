@@ -12,19 +12,19 @@ https://img.kookapp.cn/attachments/2025-02/12/67acc25dc5f06.bat
 
 当出现下面的界面的时候，说明运行已经完成
 
-<mr>
+<br>
 
 ![示例](memory/2.png)
 
-<mr>
+<br>
 
 **如果出现了下图的界面，点击"更多信息"，再点击"仍要运行"
 
-<mr>
+<br>
 
 ![示例](memory/1.png)
 
-<mr>
+<br>
 
 然后同时按下键盘上的Windows键和R键，打开"运行"窗口，并输入"sysdm.cpl"(不包括引号)，并按下回车，打开"系统数据管理器"
 
