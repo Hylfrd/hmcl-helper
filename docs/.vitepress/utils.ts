@@ -9,7 +9,7 @@ export default {
           { text: "安装Java问题", link: "/guide/java" },
           { text: "自动安装界面问题", link: "/guide/install" },
           { text: "配置文件问题", link: "/guide/config" },
-          { text: "latest.log问题", link: "/guide/latest" },
+          { text: "日志问题", link: "/guide/latest" },
           { text: "显卡问题", link: "/guide/gpu" },
           { text: "虚拟机参数问题", link: "/guide/jvm" },
           { text: "环境变量问题", link: "/guide/variables" },
@@ -17,6 +17,7 @@ export default {
           { text: "创建档案问题", link: "/guide/profile" },
           { text: "启动器日志问题", link: "/guide/launcher" },
           { text: "虚拟内存问题", link: "/guide/memory" },
+          { text: "option.txt问题", link: "/guide/option" },
         ],
       },
     ];
