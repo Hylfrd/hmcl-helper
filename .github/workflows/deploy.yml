@@ -38,4 +38,4 @@ jobs:
           folder: docs/.vitepress/dist  # 确保路径正确
           single-commit: true
           clean: true
-          token: ${{ secrets.DEPLOY_TOKEN }}  # 确保密钥存在
+          token: ${{ secrets.GITHUB_TOKEN }}
