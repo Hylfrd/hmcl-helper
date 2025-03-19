@@ -5,11 +5,12 @@ export default {
         text: "HMCL崩溃指南讲解", 
         collapsed: false, 
         items: [
-          { text: "如何安装HMCL", link: "/guide/hmcl" }, // 移除 /hmcl-helper 前缀
-          { text: "如何安装Java", link: "/guide/java" },
-          { text: "如何打开自动安装界面", link: "/guide/install" },
-          { text: "如何打开配置文件夹", link: "/guide/config" },
-          { text: "如何找到latest.log", link: "/guide/latest" },
+          { text: "HMCL更新问题", link: "/guide/hmcl" },
+          { text: "安装Java问题", link: "/guide/java" },
+          { text: "自动安装界面问题", link: "/guide/install" },
+          { text: "配置文件问题", link: "/guide/config" },
+          { text: "latest.log问题", link: "/guide/latest" },
+          { text: "显卡问题", link: "/guide/gpu" },
         ],
       },
     ];
