@@ -11,6 +11,9 @@ export default {
           { text: "配置文件问题", link: "/guide/config" },
           { text: "latest.log问题", link: "/guide/latest" },
           { text: "显卡问题", link: "/guide/gpu" },
+          { text: "虚拟机参数问题", link: "/guide/jvm" },
+          { text: "环境变量问题", link: "/guide/variables" },
+          { text: "打开'查看日志'问题", link: "/guide/log" },
         ],
       },
     ];

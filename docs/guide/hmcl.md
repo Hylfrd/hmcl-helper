@@ -1,8 +1,8 @@
 ---
-title: 如何更新 HMCL
+title: HMCL更新问题
 ---
 
-# 如何更新 HMCL
+# HMCL更新问题
 
 ## 如何手动更新HMCL
 
