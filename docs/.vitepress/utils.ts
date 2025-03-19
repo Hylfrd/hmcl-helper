@@ -18,6 +18,7 @@ export default {
           { text: "启动器日志问题", link: "/guide/launcher" },
           { text: "虚拟内存问题", link: "/guide/memory" },
           { text: "option.txt问题", link: "/guide/option" },
+          { text: "事件查看器问题", link: "/guide/event" },
         ],
       },
     ];
