@@ -15,24 +15,17 @@ export default defineConfig({
       },
     ],
   ],
-  description: "Welcome to Charlie's blog!", // 浏览器检索关键字
-  cleanUrls: true, // 路由地址隐藏.html
+  description: "Welcome to Charlie's blog!", 
+  cleanUrls: true, 
   themeConfig: {
-    logo: "/1.png", // 站点标题前的icon
+    logo: "/1.png", 
     outline: "deep", 
     nav: [
-      { text: "Home", link: "/hmcl-helper/" },
-      { text: "hmcl", link: "/hmcl-helper/hmcl", activeMatch: "/hmcl-helper/" },
-      { text: "java", link: "/hmcl-helper/java", activeMatch: "/hmcl-helper/" },
-      { text: "config", link: "/hmcl-helper/config", activeMatch: "/hmcl-helper/" },
-      { text: "mod", link: "/hmcl-helper/mod", activeMatch: "/hmcl-helper/" },
-      { text: "del-mod", link: "/hmcl-helper/del-mod", activeMatch: "/hmcl-helper/" },
-      { text: "latest", link: "/hmcl-helper/latest", activeMatch: "/hmcl-helper/" },
+      { text: "Home", link: "/hmcl-helper/" }, // 只保留 Home
     ],
     search: {
       provider: "local",
     },
-
     sidebar: {
       "/guide/": getSideBar("guide"),
     },
@@ -41,8 +34,6 @@ export default defineConfig({
     ],
     footer: {
       message: "HMCL Helper By Hylfrd,与HMCL官方无关",
- 
     },
   },
 });
-
