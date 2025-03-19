@@ -1,6 +1,5 @@
-name: hmcl-helper deploy workflow
+name: hmcl helper deploy workflow
 
-# 设置触发时机，当推送master分支或者tag到远程时触发
 on:
   push:
     tags:
@@ -8,37 +7,35 @@ on:
     branches:
       - master
   workflow_dispatch:
-# 各个脚本节点命令
+
 jobs:
   deploy-and-sync:
-    # 执行环境为linux的ubuntu系统
     runs-on: ubuntu-latest
     steps:
-      # 从master分支拉取代码
       - name: Checkout 🛎️
         uses: actions/checkout@v4
         with:
           ref: "master"
-      # 安装pnpm
+
       - name: Install pnpm
         run: npm install -g pnpm
-      # 安装node环境
+
       - uses: actions/setup-node@v3
         with:
           node-version: "18"
           cache: "pnpm"
-      # 使用pnpm安装依赖
+
       - name: Install dependencies
         run: pnpm install
-      # 打包vitepress项目
+
       - name: Build Site
         run: pnpm run docs:build
-      # 将打包后dist里的产物提交到prod分支
+
       - name: Deploy for Github 🚀
         uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
           branch: prod
-          folder: docs/.vitepress/dist
+          folder: docs/.vitepress/dist  # 确保路径正确
           single-commit: true
           clean: true
-          token: ${{ secrets.DEPLOY_TOKEN }}  # 使用新的密钥名称
+          token: ${{ secrets.GITHUB_TOKEN }}
