@@ -3,7 +3,7 @@ import utils from "./utils";
 const { getSideBar } = utils;
 
 export default defineConfig({
-  base: "/guide/", 
+  base: "/hmcl-helper/", 
   title: "HMCL Helper", 
   head: [
     [
@@ -21,13 +21,13 @@ export default defineConfig({
     logo: "/1.png", // 站点标题前的icon
     outline: "deep", 
     nav: [
-      { text: "Home", link: "/" },
-      { text: "hmcl", link: "/guide/hmcl", activeMatch: "/guide/" },
-      { text: "java", link: "/guide/java", activeMatch: "/guide/" },
-      { text: "config", link: "/guide/config", activeMatch: "/guide/" },
-      { text: "mod", link: "/guide/mod", activeMatch: "/guide/" },
-      { text: "del-mod", link: "/guide/del-mod", activeMatch: "/guide/" },
-      { text: "latest", link: "/guide/latest", activeMatch: "/guide/" },
+      { text: "Home", link: "/hmcl-helper/" },
+      { text: "hmcl", link: "/hmcl-helper/hmcl", activeMatch: "/hmcl-helper/" },
+      { text: "java", link: "/hmcl-helper/java", activeMatch: "/hmcl-helper/" },
+      { text: "config", link: "/hmcl-helper/config", activeMatch: "/hmcl-helper/" },
+      { text: "mod", link: "/hmcl-helper/mod", activeMatch: "/hmcl-helper/" },
+      { text: "del-mod", link: "/hmcl-helper/del-mod", activeMatch: "/hmcl-helper/" },
+      { text: "latest", link: "/hmcl-helper/latest", activeMatch: "/hmcl-helper/" },
     ],
     search: {
       provider: "local",
