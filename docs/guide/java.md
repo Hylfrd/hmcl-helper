@@ -51,6 +51,7 @@ title: Java问题相关
 ![示例](java/5.png)
 <br>
 
+<a id="1"></a>
 ## 更改游戏Java特定版本
 <br>
 
