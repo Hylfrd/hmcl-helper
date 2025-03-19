@@ -2,7 +2,7 @@ export default {
   getSideBar(path) {
     const wholeList = [
       {
-        text: "HMCL崩溃指南讲解", 
+        text: "HMCL崩溃指南", 
         collapsed: false, 
         items: [
           { text: "HMCL更新问题", link: "/guide/hmcl" },
