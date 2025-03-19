@@ -19,6 +19,7 @@ export default {
           { text: "虚拟内存问题", link: "/guide/memory" },
           { text: "option.txt问题", link: "/guide/option" },
           { text: "事件查看器问题", link: "/guide/event" },
+          { text: "渲染问题", link: "/guide/render" },
         ],
       },
     ];
