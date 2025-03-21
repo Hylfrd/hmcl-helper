@@ -2,6 +2,8 @@ import { defineConfig } from "vitepress";
 import utils from "./utils";
 const { getSideBar } = utils;
 
+
+
 export default defineConfig({
   base: "/hmcl-helper/", 
   title: "HMCL Helper", 
@@ -36,4 +38,6 @@ export default defineConfig({
       message: "HMCL Helper By Hylfrd,与HMCL官方无关",
     },
   },
+  lastUpdated: true
 });
+
