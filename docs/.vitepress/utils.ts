@@ -20,7 +20,7 @@ export default {
           { text: "option.txt问题", link: "/guide/option" },
           { text: "事件查看器问题", link: "/guide/event" },
           { text: "渲染问题", link: "/guide/render" },
-          { text: "测试用", link: "/guide/test" },
+          { text: "处理器问题", link: "/guide/cpu" },
         ],
       },
     ];
