@@ -23,7 +23,7 @@ export default defineConfig({
     logo: "/1.png", 
     outline: "deep", 
     nav: [
-      { text: "Home", link: "/hmcl-helper/" }, // 只保留 Home
+      { text: "主页", link: "/guide/" }, // 只保留 Home
     ],
     search: {
       provider: 'local',
