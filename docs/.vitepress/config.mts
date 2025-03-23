@@ -5,7 +5,7 @@ const { getSideBar } = utils;
 
 
 export default defineConfig({
-  base: "/hmcl-helper/", 
+  base: "/", 
   title: "HMCL Helper", 
   head: [
     [
