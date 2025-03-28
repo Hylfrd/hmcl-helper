@@ -2,6 +2,17 @@ export default {
   getSideBar(path) {
     const wholeList = [
       {
+        text: "HMCL基础指南", 
+        collapsed: false, 
+        items: [
+          { text: "模组前置问题", link: "/helper/mod1" },
+          { text: "模组报错问题", link: "/helper/mod2" },
+          { text: "版本匹配问题", link: "/helper/mod3" },
+
+        ],
+      },
+
+      {
         text: "HMCL崩溃指南", 
         collapsed: false, 
         items: [

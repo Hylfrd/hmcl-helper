@@ -65,6 +65,14 @@ https://cdn.crashmc.com/https://github.com/burningtnt/JStack-Minecraft/releases/
 
 然后**解压**下载下来的工具，打开文件夹，你可以看到以下几个文件，双击打开其中的"Run_Windows.bat"文件
 
+**一定要解压!!!!!!!!**
+**一定要解压!!!!!!!!**
+**一定要解压!!!!!!!!**
+**一定要解压!!!!!!!!**
+**一定要解压!!!!!!!!**
+**一定要解压!!!!!!!!**
+
+
 <br>
 
 ![示例](log/5.png)
