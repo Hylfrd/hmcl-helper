@@ -1,15 +1,23 @@
-/* 添加悬停动画 */
-.content-container img {
-  transition: transform 0.3s ease-in-out;
-  transform-origin: center center;
+/* 悬停动画 */
+.content-container img:not(.exclude-zoom) {
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  transform-origin: center center !important;
+  cursor: zoom-in !important;
 }
 
-.content-container img:hover {
-  transform: scale(1.05);
-  cursor: zoom-in;
+.content-container img:not(.exclude-zoom):hover {
+  transform: scale(1.08) !important;
 }
 
-/* 覆盖 Viewer.js 的默认 z-index */
+/* Viewer.js 覆盖 */
 .viewer-container {
   z-index: 99999 !important;
+}
+
+.viewer-toolbar {
+  background: rgba(0, 0, 0, 0.7) !important;
+}
+
+.viewer-button {
+  filter: invert(1) !important;
 }
