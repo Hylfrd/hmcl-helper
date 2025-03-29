@@ -7,14 +7,19 @@ export default defineConfig({
   title: "HMCL Helper",
   head: [
     ["link", { rel: "icon", type: "image/svg+xml", href: "/1.png" }],
-    // 添加 Viewer.js 样式
     ["link", { rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/viewerjs@1.11.1/dist/viewer.min.css" }]
   ],
   description: "Welcome to Charlie's blog!",
   cleanUrls: true,
+  // 新增中文语言配置
+  lang: 'zh-CN',
   themeConfig: {
     logo: "/1.png",
-    outline: "deep",
+    // 修改右侧目录标题
+    outline: {
+      level: 'deep',
+      label: '目录'  // 关键修改项
+    },
     nav: [{ text: "主页", link: "/guide/" }],
     search: {
       provider: 'local',

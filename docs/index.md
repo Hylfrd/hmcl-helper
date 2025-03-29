@@ -3,10 +3,10 @@
 layout: home
 
 hero:
-  name: "Hylfrd HMCL Helper"
+  name: "HMCL Helper"
   tagline: HMCL Helper By Hylfrd
   actions:
     - theme: brand
-      text: 查看指导
+      text: 查看帮助
       link: /guide/
 
