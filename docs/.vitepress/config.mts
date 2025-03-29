@@ -3,25 +3,31 @@ import utils from "./utils";
 const { getSideBar } = utils;
 
 export default defineConfig({
-  base: "/", // 改为根路径
+  base: "/",
   title: "HMCL Helper",
   head: [
+    // 关键修改：使用完整绝对路径
     ["link", { 
       rel: "icon",
       type: "image/svg+xml",
-      href: "/1.png" // 移除仓库名前缀
+      href: "https://hmcl-helper.cn/1.png" // 使用完整域名路径
     }],
     ["link", { 
       rel: "stylesheet",
       href: "https://cdn.jsdelivr.net/npm/viewerjs@1.11.1/dist/viewer.min.css" 
     }],
-    // 新增 CNAME 配置
-    ["link", { rel: "canonical", href: "https://hmcl-helper.cn" }]
+    // 新增备用图标声明
+    ["link", {
+      rel: "shortcut icon",
+      href: "https://hmcl-helper.cn/favicon.ico",
+      type: "image/x-icon"
+    }]
   ],
   description: "Welcome to Charlie's blog!",
   cleanUrls: true,
   themeConfig: {
-    logo: "/1.png", // 移除仓库名前缀
+    // 关键修改：使用完整路径
+    logo: "https://hmcl-helper.cn/1.png",
     outline: "deep",
     nav: [{ 
       text: "主页", 
