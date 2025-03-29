@@ -1,58 +1,48 @@
-import DefaultTheme from 'vitepress/theme'
-import './style.css'
+import { defineConfig } from "vitepress";
+import utils from "./utils";
+const { getSideBar } = utils;
 
-export default {
-  ...DefaultTheme,
-  enhanceApp({ app }) {
-    if (typeof window !== 'undefined') {
-      import('viewerjs').then(({ default: Viewer }) => {
-        let viewerInstance = null
-        
-        const initViewer = () => {
-          // 销毁旧实例
-          if (viewerInstance) {
-            viewerInstance.destroy()
-          }
-          
-          // 创建新实例
-          const container = document.querySelector('.content-container')
-          viewerInstance = new Viewer(container, {
-            inline: false,
-            toolbar: {
-              zoomIn: 1,
-              zoomOut: 1,
-              oneToOne: 1,
-              reset: 1,
-              rotateLeft: 1,
-              rotateRight: 1,
-            },
-            // 关键配置：启用单击触发
-            trigger: 'click',
-            // 隐藏默认工具栏按钮
-            builtinButtons: {
-              zoomIn: true,
-              zoomOut: true,
-              oneToOne: true,
-              reset: true,
-              rotateLeft: true,
-              rotateRight: true,
+export default defineConfig({
+  base: "/",
+  title: "HMCL Helper",
+  head: [
+    ["link", { rel: "icon", type: "image/svg+xml", href: "/1.png" }],
+    // 添加 Viewer.js 样式
+    ["link", { rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/viewerjs@1.11.1/dist/viewer.min.css" }]
+  ],
+  description: "Welcome to Charlie's blog!",
+  cleanUrls: true,
+  themeConfig: {
+    logo: "/1.png",
+    outline: "deep",
+    nav: [{ text: "主页", link: "/guide/" }],
+    search: {
+      provider: 'local',
+      options: {
+        locales: {
+          zh: {
+            translations: {
+              button: { buttonText: '搜索文档', buttonAriaLabel: '搜索文档' },
+              modal: {
+                noResultsText: '无法找到相关结果',
+                resetButtonTitle: '清除查询条件',
+                footer: { selectText: '选择', navigateText: '切换' }
+              }
             }
-          })
-
-          // 添加双击提示
-          const images = document.querySelectorAll('.content-container img')
-          images.forEach(img => {
-            img.title = '单击查看大图 | 悬停放大效果'
-          })
+          }
         }
-
-        // 初始化
-        setTimeout(initViewer, 500)
-        // 路由切换后重新初始化
-        window.addEventListener('vitepress:route-change', () => {
-          setTimeout(initViewer, 300)
-        })
-      })
-    }
-  }
-}
+      }
+    },
+    sidebar: {
+      "/guide/": getSideBar("guide"),
+      "/helper/": getSideBar("helper"),
+    },
+    socialLinks: [
+      { icon: "github", link: "https://github.com/Hylfrd/hmcl-helper" }
+    ],
+    footer: {
+      message: "HMCL Helper By Hylfrd,与HMCL官方无关",
+    },
+  },
+  lastUpdated: true
+});
