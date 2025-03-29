@@ -1,48 +1,38 @@
-import { defineConfig } from "vitepress";
-import utils from "./utils";
-const { getSideBar } = utils;
+import DefaultTheme from 'vitepress/theme'
+import './style.css'
 
-export default defineConfig({
-  base: "/",
-  title: "HMCL Helper",
-  head: [
-    ["link", { rel: "icon", type: "image/svg+xml", href: "/1.png" }],
-    // 添加 Viewer.js 样式
-    ["link", { rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/viewerjs@1.11.1/dist/viewer.min.css" }]
-  ],
-  description: "Welcome to Charlie's blog!",
-  cleanUrls: true,
-  themeConfig: {
-    logo: "/1.png",
-    outline: "deep",
-    nav: [{ text: "主页", link: "/guide/" }],
-    search: {
-      provider: 'local',
-      options: {
-        locales: {
-          zh: {
-            translations: {
-              button: { buttonText: '搜索文档', buttonAriaLabel: '搜索文档' },
-              modal: {
-                noResultsText: '无法找到相关结果',
-                resetButtonTitle: '清除查询条件',
-                footer: { selectText: '选择', navigateText: '切换' }
-              }
+export default {
+  ...DefaultTheme,
+  enhanceApp({ app }) {
+    if (typeof window !== 'undefined') {
+      import('viewerjs').then(({ default: Viewer }) => {
+        const initViewer = () => {
+          const images = document.querySelectorAll('.content-container img')
+          
+          images.forEach(img => {
+            // 保留原有双击功能
+            img.ondblclick = () => {
+              new Viewer(img, {
+                inline: false,
+                toolbar: {
+                  zoomIn: 1,
+                  zoomOut: 1,
+                  oneToOne: 1,
+                  reset: 1,
+                  rotateLeft: 1,
+                  rotateRight: 1,
+                },
+              }).show()
             }
-          }
+
+            // 添加悬停提示效果
+            img.title = '双击查看大图 | 悬停放大'
+          })
         }
-      }
-    },
-    sidebar: {
-      "/guide/": getSideBar("guide"),
-      "/helper/": getSideBar("helper"),
-    },
-    socialLinks: [
-      { icon: "github", link: "https://github.com/Hylfrd/hmcl-helper" }
-    ],
-    footer: {
-      message: "HMCL Helper By Hylfrd,与HMCL官方无关",
-    },
-  },
-  lastUpdated: true
-});
+
+        setTimeout(initViewer, 500)
+        window.addEventListener('vitepress:route-change', initViewer)
+      })
+    }
+  }
+}
