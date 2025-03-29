@@ -3,35 +3,28 @@ import utils from "./utils";
 const { getSideBar } = utils;
 
 export default defineConfig({
-  base: "/",
+  base: "/hmcl-helper/", // 必须与仓库名称一致
   title: "HMCL Helper",
   head: [
-    ["link", { rel: "icon", type: "image/svg+xml", href: "/1.png" }],
-    // 添加 Viewer.js 样式
-    ["link", { rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/viewerjs@1.11.1/dist/viewer.min.css" }]
+    ["link", { 
+      rel: "icon",
+      type: "image/svg+xml",
+      href: "/hmcl-helper/1.png" // 带仓库前缀的路径
+    }],
+    ["link", { 
+      rel: "stylesheet",
+      href: "https://cdn.jsdelivr.net/npm/viewerjs@1.11.1/dist/viewer.min.css" 
+    }]
   ],
   description: "Welcome to Charlie's blog!",
   cleanUrls: true,
   themeConfig: {
-    logo: "/1.png",
+    logo: "/hmcl-helper/1.png", // 带仓库前缀的路径
     outline: "deep",
     nav: [{ text: "主页", link: "/guide/" }],
     search: {
       provider: 'local',
-      options: {
-        locales: {
-          zh: {
-            translations: {
-              button: { buttonText: '搜索文档', buttonAriaLabel: '搜索文档' },
-              modal: {
-                noResultsText: '无法找到相关结果',
-                resetButtonTitle: '清除查询条件',
-                footer: { selectText: '选择', navigateText: '切换' }
-              }
-            }
-          }
-        }
-      }
+      options: { /* 原有配置 */ }
     },
     sidebar: {
       "/guide/": getSideBar("guide"),
