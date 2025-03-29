@@ -84,9 +84,9 @@ forge模组的声明保存在mods.toml文件内，打开META-INF文件夹，打�
 
 我们在dependencies选项即可看到模组需要的前置以及对应版本
 
-#### fabric模组:以Steam_Rails-1.6.9+fabric-mc1.20.1作为示例
+#### fabric模组:以tweakeroo-fabric-1.20.4-0.19.3作为示例
 
-下载Steam_Rails-1.6.9+fabric-mc1.20.1模组，使用**压缩软件**解压模组，你会得到一个文件夹
+下载tweakeroo-fabric-1.20.4-0.19.3模组，使用**压缩软件**解压模组，你会得到一个文件夹
 
 打开文件夹，打开其中的fabric.mod.json文件(记事本即可打开)
 
