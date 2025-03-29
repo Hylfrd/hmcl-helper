@@ -1,0 +1,15 @@
+/* 添加悬停动画 */
+.content-container img {
+  transition: transform 0.3s ease-in-out;
+  transform-origin: center center;
+}
+
+.content-container img:hover {
+  transform: scale(1.05);
+  cursor: zoom-in;
+}
+
+/* 覆盖 Viewer.js 的默认 z-index */
+.viewer-container {
+  z-index: 99999 !important;
+}
