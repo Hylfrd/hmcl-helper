@@ -18,6 +18,7 @@
     "vitepress": "^1.6.3"
   },
   "dependencies": {
+    "@vueuse/core": "^13.1.0",
     "viewerjs": "^1.11.7"
   }
 }

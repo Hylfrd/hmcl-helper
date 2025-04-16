@@ -32,8 +32,20 @@ export default {
           { text: "事件查看器问题", link: "/guide/event" },
           { text: "渲染问题", link: "/guide/render" },
           { text: "处理器问题", link: "/guide/cpu" },
+
         ],
       },
+
+      {
+        text: "网络问题指南", 
+        collapsed: false, 
+        items: [
+          { text: "账号登录问题", link: "/internet/acc" },
+          { text: "资源下载问题", link: "/internet/mod" },
+
+        ],
+      },
+      
     ];
 
     return wholeList;
