@@ -32,6 +32,7 @@ export default {
           { text: "事件查看器问题", link: "/guide/event" },
           { text: "渲染问题", link: "/guide/render" },
           { text: "处理器问题", link: "/guide/cpu" },
+          { text: "启动器环境问题", link: "/guide/environment" },
 
         ],
       },

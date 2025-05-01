@@ -73,13 +73,11 @@ USBEAm基于修改Host，效果可能不稳定，如果仍然出现问题，请�
 
 VPN工具使用与传播违法，以下仅提供一种可行的免费代理方法
 
-选择以下任意链接下载Clash客户端：
+选择以下链接下载Clash客户端：
 
-下载链接一：https://gh-proxy.com/https://github.com/Z-Siqi/Clash-for-Windows_Chinese/releases/download/CFW-V0.20.39_OPT-1/Clash.for.Windows.Setup.0.20.39_Opt-1.exe
+https://github.com/Z-Siqi/Clash-for-Windows_Chinese/releases/download/CFW-V0.20.39_OPT-1/Clash.for.Windows.Setup.0.20.39_Opt-1.exe
 
-下载链接二：https://download.三分互联.com/Clash.for.Windows.Setup.0.20.39_Opt-1.exe
-
-（如果这两个链接都挂了联系QQ : 3553841566）
+上面那个链接慢可以用这个 https://gh-proxy.com/https://github.com/Z-Siqi/Clash-for-Windows_Chinese/releases/download/CFW-V0.20.39_OPT-1/Clash.for.Windows.Setup.0.20.39_Opt-1.exe
 
 然后安装下载的程序，前往这个网站 https://ikuuu.pw （注：梯子官网域名随时被墙，具体请以实际显示为准）注册一个账号并登录
 
