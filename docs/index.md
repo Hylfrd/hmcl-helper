@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "HMCL Helper"
-  tagline: HMCL Helper By Hylfrd
+  tagline: 炸鸭好吃！我要吃炸鸭！
   actions:
     - theme: brand
       text: 查看帮助
