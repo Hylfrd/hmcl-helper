@@ -4,7 +4,7 @@ const { getSideBar } = utils;
 
 export default defineConfig({
   base: "/",
-  title: "HMCL Helper",
+  title: "炸鸭好吃！我要吃炸鸭！",
   head: [
     ["link", { rel: "icon", type: "image/svg+xml", href: "/1.png" }],
     ["link", { rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/viewerjs@1.11.1/dist/viewer.min.css" }]
