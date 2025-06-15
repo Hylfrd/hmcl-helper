@@ -3,7 +3,7 @@ export default {
     const wholeList = [
       {
         text: "HMCL基础指南", 
-        collapsed: false, 
+        collapsed: true, 
         items: [
           { text: "模组前置问题", link: "/helper/mod1" },
           { text: "模组报错问题", link: "/helper/mod2" },
@@ -14,10 +14,11 @@ export default {
 
       {
         text: "HMCL崩溃指南", 
-        collapsed: false, 
+        collapsed: true, 
         items: [
           { text: "HMCL更新问题", link: "/guide/hmcl" },
-          { text: "安装Java问题", link: "/guide/java" },
+          { text: "Java问题相关", link: "/guide/java" },
+          { text: "更改游戏Java特定版本", link: "/guide/java1" },
           { text: "自动安装界面问题", link: "/guide/install" },
           { text: "配置文件问题", link: "/guide/config" },
           { text: "日志问题", link: "/guide/latest" },
@@ -35,13 +36,15 @@ export default {
           { text: "启动器环境问题", link: "/guide/environment" },
           { text: "基准测试问题", link: "/guide/cputest" },
           { text: "英伟达独显直连问题", link: "/guide/gxn" },
+          { text: "导出游戏运行栈不兼容", link: "/guide/log1" },
+          { text: "软渲染器问题", link: "/guide/render1" },
 
         ],
       },
 
       {
         text: "网络问题指南", 
-        collapsed: false, 
+        collapsed: true, 
         items: [
           { text: "账号登录问题", link: "/internet/acc" },
           { text: "资源下载问题", link: "/internet/mod" },
