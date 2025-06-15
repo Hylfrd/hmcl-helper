@@ -4,7 +4,15 @@ title: 虚拟内存问题
 
 # 虚拟内存问题
 
-## 如何添加虚拟内存
+## 自动添加虚拟内存
+
+下载这个程序 https://gitee.com/hylfrd/hmcl-helper/releases/download/1.0.0/hmcl-helper.zip 
+
+**解压**后运行其中的run.bat，执行其中的选项3
+
+**关于执行部分**：执行即指在跳出来的CMD窗口中输入"3"后，按Enter执行
+
+## 手动添加虚拟内存
 
 首先下载这个文件，双击打开运行
 
@@ -18,7 +26,7 @@ https://img.kookapp.cn/attachments/2025-02/12/67acc25dc5f06.bat
 
 <br>
 
-**如果出现了下图的界面，点击"更多信息"，再点击"仍要运行"
+**如果出现了下图的界面，点击"更多信息"，再点击"仍要运行"**
 
 <br>
 
