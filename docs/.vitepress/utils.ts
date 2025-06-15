@@ -33,6 +33,8 @@ export default {
           { text: "渲染问题", link: "/guide/render" },
           { text: "处理器问题", link: "/guide/cpu" },
           { text: "启动器环境问题", link: "/guide/environment" },
+          { text: "基准测试问题", link: "/guide/cputest" },
+          { text: "英伟达独显直连问题", link: "/guide/gxn" },
 
         ],
       },
@@ -43,6 +45,7 @@ export default {
         items: [
           { text: "账号登录问题", link: "/internet/acc" },
           { text: "资源下载问题", link: "/internet/mod" },
+          { text: "代理工具问题", link: "/internet/vpn" },
 
         ],
       },
