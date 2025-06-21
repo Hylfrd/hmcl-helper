@@ -38,6 +38,7 @@ export default {
           { text: "英伟达独显直连问题", link: "/guide/gxn" },
           { text: "导出游戏运行栈不兼容", link: "/guide/log1" },
           { text: "软渲染器问题", link: "/guide/render1" },
+          { text: "磁盘管理问题", link: "/guide/disk" },
 
         ],
       },
