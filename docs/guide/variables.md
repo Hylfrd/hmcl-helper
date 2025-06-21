@@ -4,7 +4,19 @@ title: 环境变量问题
 
 # 环境变量问题
 
-## 如何添加环境变量
+## 自动添加环境变量 
+
+**自动添加只适用于添加-Djavax.net.ssl.trustStoreType=WINDOWS-ROOT的环境变量**
+
+下载这个程序 https://gitee.com/hylfrd/hmcl-helper/releases/download/1.0.0/hmcl-helper.zip 
+
+**解压**后运行其中的run.bat，执行其中的选项2
+
+**关于执行部分**：执行即指在跳出来的CMD窗口中输入"2"后，按Enter执行
+
+如有任何疑问请前往崩溃群询问
+
+## 手动添加环境变量
 
 **此方法适用于从Windows XP到Windows 11之间的任何Windows系统,Macos等系统的方法请自行百度，且Macos等系统的环境变量与Windows不同，若有疑问请在崩溃群中询问**
 
