@@ -16,6 +16,7 @@ export default {
         text: "HMCL崩溃指南", 
         collapsed: true, 
         items: [
+          { text: "报错群群公告", link: "/guide/notice" },
           { text: "HMCL更新问题", link: "/guide/hmcl" },
           { text: "Java问题相关", link: "/guide/java" },
           { text: "更改游戏Java特定版本", link: "/guide/java1" },
