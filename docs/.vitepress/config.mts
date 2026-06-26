@@ -58,9 +58,9 @@ export default defineConfig({
       { icon: "github", link: "https://github.com/Hylfrd/hmcl-helper" },
     ],
     footer: {
-      message: "HMCL Helper By Hylfrd",
-      copyright:
-        '<a href="https://beian.miit.gov.cn/" target="_blank" rel="noreferrer">粤ICP备2025433394号-1</a>',
+      message:
+        'HMCL Helper By Hylfrd&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://beian.miit.gov.cn/" target="_blank" rel="noreferrer">粤ICP备2025433394号-1</a>',
+      copyright: "",
     },
   },
   lastUpdated: true,
