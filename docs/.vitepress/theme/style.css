@@ -1,4 +1,4 @@
-/* 悬停动画 */
+/* 图片悬停动画 */
 .content-container img:not(.exclude-zoom) {
   transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
   transform-origin: center center !important;
@@ -20,4 +20,83 @@
 
 .viewer-button {
   filter: invert(1) !important;
+}
+
+/* 固定底栏 */
+:root {
+  --site-footer-height: 56px;
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+.Layout {
+  padding-bottom: var(--site-footer-height);
+  box-sizing: border-box;
+}
+
+.site-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  height: var(--site-footer-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  border-top: 1px solid var(--vp-c-divider);
+  background: color-mix(in srgb, var(--vp-c-bg) 92%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-sizing: border-box;
+}
+
+.site-footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 1200px;
+  color: var(--vp-c-text-2);
+  font-size: 14px;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.site-footer a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.site-footer a:hover {
+  color: var(--vp-c-text-1);
+}
+
+.site-footer-sep {
+  opacity: 0.6;
+}
+
+@media (max-width: 640px) {
+  :root {
+    --site-footer-height: 52px;
+  }
+
+  .site-footer {
+    padding: 0 12px;
+  }
+
+  .site-footer-inner {
+    gap: 8px;
+    font-size: 13px;
+  }
 }
