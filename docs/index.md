@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "HMCL Helper"
-  tagline: HMCL-Helper
+  tagline: 为HMCL崩溃报错交流群中更好地指引用户的操作文档指南。
   actions:
     - theme: brand
       text: 查看帮助
