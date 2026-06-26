@@ -1,5 +1,6 @@
 import { defineConfig } from "vitepress";
 import utils from "./utils";
+
 const { getSideBar } = utils;
 
 export default defineConfig({
@@ -7,36 +8,46 @@ export default defineConfig({
   title: "炸鸭好吃！我要吃炸鸭！",
   head: [
     ["link", { rel: "icon", type: "image/svg+xml", href: "/1.png" }],
-    ["link", { rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/viewerjs@1.11.1/dist/viewer.min.css" }]
+    [
+      "link",
+      {
+        rel: "stylesheet",
+        href: "https://cdn.jsdelivr.net/npm/viewerjs@1.11.1/dist/viewer.min.css",
+      },
+    ],
   ],
   description: "Welcome to Charlie's blog!",
   cleanUrls: true,
-  // 新增中文语言配置
-  lang: 'zh-CN',
+  lang: "zh-CN",
   themeConfig: {
     logo: "/1.png",
-    // 修改右侧目录标题
     outline: {
-      level: 'deep',
-      label: '目录'  // 关键修改项
+      level: "deep",
+      label: "目录",
     },
     nav: [{ text: "主页", link: "/guide/" }],
     search: {
-      provider: 'local',
+      provider: "local",
       options: {
         locales: {
           zh: {
             translations: {
-              button: { buttonText: '搜索文档', buttonAriaLabel: '搜索文档' },
+              button: {
+                buttonText: "搜索文档",
+                buttonAriaLabel: "搜索文档",
+              },
               modal: {
-                noResultsText: '无法找到相关结果',
-                resetButtonTitle: '清除查询条件',
-                footer: { selectText: '选择', navigateText: '切换' }
-              }
-            }
-          }
-        }
-      }
+                noResultsText: "无法找到相关结果",
+                resetButtonTitle: "清除查询条件",
+                footer: {
+                  selectText: "选择",
+                  navigateText: "切换",
+                },
+              },
+            },
+          },
+        },
+      },
     },
     sidebar: {
       "/guide/": getSideBar("guide"),
@@ -44,11 +55,13 @@ export default defineConfig({
       "/internet/": getSideBar("internet"),
     },
     socialLinks: [
-      { icon: "github", link: "https://github.com/Hylfrd/hmcl-helper" }
+      { icon: "github", link: "https://github.com/Hylfrd/hmcl-helper" },
     ],
     footer: {
-      message: "HMCL Helper By Hylfrd,与HMCL官方无关",
+      message: "HMCL Helper By Hylfrd",
+      copyright:
+        '<a href="https://beian.miit.gov.cn/" target="_blank" rel="noreferrer">粤ICP备2025433394号-1</a>',
     },
   },
-  lastUpdated: true
+  lastUpdated: true,
 });
