@@ -1,3 +1,18 @@
+:root {
+  --site-footer-height: 56px;
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+.VPHome {
+  padding-bottom: calc(var(--site-footer-height) + 20px);
+  box-sizing: border-box;
+}
+
 /* 图片悬停动画 */
 .content-container img:not(.exclude-zoom) {
   transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
@@ -22,38 +37,21 @@
   filter: invert(1) !important;
 }
 
-/* 固定底栏 */
-:root {
-  --site-footer-height: 56px;
-}
-
-html,
-body,
-#app {
-  min-height: 100%;
-}
-
-.Layout {
-  padding-bottom: var(--site-footer-height);
-  box-sizing: border-box;
-}
-
+/* 首页底栏 */
 .site-footer {
   position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 100;
+  z-index: 120;
   height: var(--site-footer-height);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0 16px;
-  border-top: 1px solid var(--vp-c-divider);
-  background: color-mix(in srgb, var(--vp-c-bg) 92%, transparent);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   box-sizing: border-box;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  background: rgba(255, 255, 255, 0.96);
 }
 
 .site-footer-inner {
@@ -63,7 +61,7 @@ body,
   gap: 12px;
   width: 100%;
   max-width: 1200px;
-  color: var(--vp-c-text-2);
+  color: rgba(15, 23, 42, 0.72);
   font-size: 14px;
   line-height: 1;
   text-align: center;
@@ -79,16 +77,20 @@ body,
 }
 
 .site-footer a:hover {
-  color: var(--vp-c-text-1);
+  color: rgba(15, 23, 42, 0.92);
 }
 
 .site-footer-sep {
-  opacity: 0.6;
+  opacity: 0.45;
 }
 
 @media (max-width: 640px) {
   :root {
     --site-footer-height: 52px;
+  }
+
+  .VPHome {
+    padding-bottom: calc(var(--site-footer-height) + 16px);
   }
 
   .site-footer {
