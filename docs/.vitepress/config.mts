@@ -5,7 +5,7 @@ const { getSideBar } = utils;
 
 export default defineConfig({
   base: "/",
-  title: "炸鸭好吃！我要吃炸鸭！",
+  title: "HMCL-Helper",
   head: [
     ["link", { rel: "icon", type: "image/svg+xml", href: "/1.png" }],
     [
@@ -16,7 +16,7 @@ export default defineConfig({
       },
     ],
   ],
-  description: "Welcome to Charlie's blog!",
+  description: "HMCL-Helper documentation site",
   cleanUrls: true,
   lang: "zh-CN",
   themeConfig: {
