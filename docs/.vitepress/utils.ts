@@ -2,17 +2,6 @@ export default {
   getSideBar(path) {
     const wholeList = [
       {
-        text: "HMCL基础指南", 
-        collapsed: true, 
-        items: [
-          { text: "模组前置问题", link: "/helper/mod1" },
-          { text: "模组报错问题", link: "/helper/mod2" },
-          { text: "版本匹配问题", link: "/helper/mod3" },
-
-        ],
-      },
-
-      {
         text: "HMCL崩溃指南", 
         collapsed: true, 
         items: [
@@ -44,17 +33,6 @@ export default {
         ],
       },
 
-      {
-        text: "网络问题指南", 
-        collapsed: true, 
-        items: [
-          { text: "账号登录问题", link: "/internet/acc" },
-          { text: "资源下载问题", link: "/internet/mod" },
-          { text: "代理工具问题", link: "/internet/vpn" },
-
-        ],
-      },
-      
     ];
 
     return wholeList;
