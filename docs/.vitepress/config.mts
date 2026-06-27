@@ -29,21 +29,24 @@ export default defineConfig({
     search: {
       provider: "local",
       options: {
-        locales: {
-          zh: {
-            translations: {
-              button: {
-                buttonText: "搜索文档",
-                buttonAriaLabel: "搜索文档",
-              },
-              modal: {
-                noResultsText: "无法找到相关结果",
-                resetButtonTitle: "清除查询条件",
-                footer: {
-                  selectText: "选择",
-                  navigateText: "切换",
-                },
-              },
+        translations: {
+          button: {
+            buttonText: "搜索",
+            buttonAriaLabel: "搜索",
+          },
+          modal: {
+            displayDetails: "显示详情",
+            resetButtonTitle: "清除查询条件",
+            backButtonTitle: "返回搜索",
+            noResultsText: "无法找到相关结果",
+            footer: {
+              selectText: "选择",
+              selectKeyAriaLabel: "回车键",
+              navigateText: "切换",
+              navigateUpKeyAriaLabel: "上箭头",
+              navigateDownKeyAriaLabel: "下箭头",
+              closeText: "关闭",
+              closeKeyAriaLabel: "Esc 键",
             },
           },
         },

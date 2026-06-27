@@ -102,3 +102,55 @@ body,
     font-size: 13px;
   }
 }
+
+/* 顶部搜索框加宽 */
+.VPNavBarSearch {
+  flex: 0 0 420px;
+  width: 420px;
+  min-width: 420px;
+  margin-right: auto;
+}
+
+.VPNavBarSearch #local-search {
+  width: 100%;
+}
+
+.VPNavBarSearch .DocSearchButton {
+  width: 100%;
+  max-width: none;
+  min-width: 420px;
+}
+
+.VPNavBarSearch .DocSearch-Button-Container {
+  flex: 1;
+}
+
+.VPNavBarSearch .DocSearch-Button-Placeholder {
+  font-size: 14px;
+}
+
+@media (max-width: 960px) {
+  .VPNavBarSearch {
+    flex: 0 0 320px;
+    width: 320px;
+    min-width: 320px;
+  }
+
+  .VPNavBarSearch .DocSearchButton {
+    min-width: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .VPNavBarSearch {
+    flex: 0 0 auto;
+    width: auto;
+    min-width: 0;
+  }
+
+  .VPNavBarSearch #local-search,
+  .VPNavBarSearch .DocSearchButton {
+    width: auto;
+    min-width: 0;
+  }
+}
