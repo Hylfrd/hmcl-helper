@@ -3,7 +3,7 @@ export default {
     const wholeList = [
       {
         text: "HMCL崩溃指南", 
-        collapsed: true, 
+        collapsed: false, 
         items: [
           { text: "报错群群公告", link: "/guide/notice" },
           { text: "HMCL更新问题", link: "/guide/hmcl" },
