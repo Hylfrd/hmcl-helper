@@ -6,10 +6,9 @@ title: HMCL更新问题
 
 ## 如何手动更新HMCL
 
-首先你可以通过下面链接下载 HMCL启动器 3.6.12 正式版
+你可以在HMCL的github仓库中下载到HMCL的最新版本：
 
-Github仓库链接：https://github.com/HMCL-dev/HMCL/releases/download/release-3.6.12/HMCL-3.6.12.exe<br>
-镜像链接（上面链接无法下载或过慢使用这个）：https://cdn.crashmc.com/https://github.com/HMCL-dev/HMCL/releases/download/release-3.6.12/HMCL-3.6.12.exe
+https://github.com/HMCL-dev/HMCL/releases
 
 然后你需要前往你的游戏目录，即你打开游戏的文件夹。下图为一种示例：
 
@@ -53,13 +52,3 @@ Github仓库链接：https://github.com/HMCL-dev/HMCL/releases/download/release-
 
 
 **请注意更新启动器版本不一定能解决问题，若出现新问题请回到崩溃群**
-
-**若你对更新过程有任何疑问，请前往用户群询问，而不是崩溃群**
-
-| 用户群       | 群号       | 用户群       | 群号       |
-| ------------ | ---------- | ------------ | ---------- |
-| HMCL 用户群 ① | 633640264  | HMCL 用户群 ② | 203232161  |
-| HMCL 用户群 ③ | 201034984  | HMCL 用户群 ④ | 533529045  |
-| HMCL 用户群 ⑤ | 744304553  | HMCL 用户群 ⑥ | 282845310  |
-| HMCL 用户群 ⑦ | 482624681  | HMCL 用户群 ⑧ | 991620626  |
-| HMCL 用户群 ⑨ | 657677715  | HMCL 用户群 ⑩ | 775084843  |
