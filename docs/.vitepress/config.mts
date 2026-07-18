@@ -54,6 +54,7 @@ export default defineConfig({
     },
     sidebar: {
       "/guide/": getSideBar("guide"),
+      "/basic/": getSideBar("basic"),
     },
     socialLinks: [
       { icon: "github", link: "https://github.com/Hylfrd/hmcl-helper" },
