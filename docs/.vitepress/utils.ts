@@ -2,6 +2,14 @@ export default {
   getSideBar(path) {
     const wholeList = [
       {
+        text: "HMCL基础指导",
+        collapsed: false,
+        items: [
+          { text: "如何找到自己心仪的模组并下载游玩", link: "/guide/basic" },
+        ],
+      },
+
+      {
         text: "HMCL崩溃指南", 
         collapsed: false, 
         items: [
