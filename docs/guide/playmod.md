@@ -20,7 +20,7 @@ https://www.mcmod.cn/
 
 <br>
 
-![示例](basic/01.png)
+![示例](playmod/01.png)
 
 <br>
 
@@ -28,7 +28,7 @@ https://www.mcmod.cn/
 
 <br>
 
-![示例](basic/02.png)
+![示例](playmod/02.png)
 
 <br>
 
@@ -36,7 +36,7 @@ https://www.mcmod.cn/
 
 <br>
 
-![示例](basic/03.png)
+![示例](playmod/03.png)
 
 <br>
 
@@ -44,7 +44,7 @@ https://www.mcmod.cn/
 
 <br>
 
-![示例](basic/04.png)
+![示例](playmod/04.png)
 
 <br>
 
@@ -56,7 +56,7 @@ https://www.mcmod.cn/
 
 <br>
 
-![示例](basic/05.png)
+![示例](playmod/05.png)
 
 <br>
 
@@ -64,7 +64,7 @@ https://www.mcmod.cn/
 
 <br>
 
-![示例](basic/06.png)
+![示例](playmod/06.png)
 
 <br>
 
@@ -72,7 +72,7 @@ https://www.mcmod.cn/
 
 <br>
 
-![示例](basic/07.png)
+![示例](playmod/07.png)
 
 <br>
 
@@ -80,7 +80,7 @@ https://www.mcmod.cn/
 
 <br>
 
-![示例](basic/08.png)
+![示例](playmod/08.png)
 
 <br>
 
@@ -88,7 +88,7 @@ https://www.mcmod.cn/
 
 <br>
 
-![示例](basic/09.png)
+![示例](playmod/09.png)
 
 <br>
 
@@ -96,7 +96,7 @@ https://www.mcmod.cn/
 
 <br>
 
-![示例](basic/10.png)
+![示例](playmod/10.png)
 
 <br>
 
@@ -104,7 +104,7 @@ https://www.mcmod.cn/
 
 <br>
 
-![示例](basic/11.png)
+![示例](playmod/11.png)
 
 <br>
 
@@ -121,7 +121,7 @@ https://www.mcmod.cn/
 
 <br>
 
-![示例](basic/12.png)
+![示例](playmod/12.png)
 
 <br>
 
@@ -129,7 +129,7 @@ https://www.mcmod.cn/
 
 <br>
 
-![示例](basic/13.png)
+![示例](playmod/13.png)
 
 <br>
 
@@ -139,7 +139,7 @@ https://www.mcmod.cn/
 
 <br>
 
-![示例](basic/14.png)
+![示例](playmod/14.png)
 
 <br>
 
@@ -147,7 +147,7 @@ https://www.mcmod.cn/
 
 <br>
 
-![示例](basic/15.png)
+![示例](playmod/15.png)
 
 <br>
 
@@ -155,7 +155,7 @@ https://www.mcmod.cn/
 
 <br>
 
-![示例](basic/16.png)
+![示例](playmod/16.png)
 
 <br>
 
@@ -163,7 +163,7 @@ Fabric API 安装完成后，回到方块宝可梦的下载窗口，再点击“
 
 <br>
 
-![示例](basic/17.png)
+![示例](playmod/17.png)
 
 <br>
 
@@ -171,7 +171,7 @@ Fabric API 安装完成后，回到方块宝可梦的下载窗口，再点击“
 
 <br>
 
-![示例](basic/18.png)
+![示例](playmod/18.png)
 
 <br>
 
