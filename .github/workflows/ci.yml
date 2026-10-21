@@ -7,33 +7,53 @@ on:
   pull_request:
     branches:
       - master
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: hmcl-helper-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          # Exclude committed package-manager caches while keeping every site asset.
+          sparse-checkout: |
+            .github
+            docs
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 24
+          check-latest: true
           cache: pnpm
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --frozen-lockfile --registry=https://registry.npmjs.org
+
+      - name: Audit dependencies
+        run: pnpm audit --registry=https://registry.npmjs.org
 
       - name: Build docs
-        run: pnpm run docs:build
+        run: |
+          pnpm run docs:build
+          printf '%s\n' "$GITHUB_SHA" > docs/.vitepress/dist/version.txt
 
       - name: Deploy dist to server
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-        uses: appleboy/scp-action@v0.1.7
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
+        uses: appleboy/scp-action@ff85246acaad7bdce478db94a363cd2bf7c90345 # v1.0.0
         with:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USER }}
@@ -42,3 +62,11 @@ jobs:
           target: "/var/www/hmcl-helper"
           strip_components: 3
           overwrite: true
+          command_timeout: 20m
+
+      - name: Verify deployed version
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
+        run: |
+          deployed=$(curl --fail --silent --show-error --retry 3 "https://hmcl-helper.cn/version.txt?sha=$GITHUB_SHA")
+          test "$deployed" = "$GITHUB_SHA"
+          curl --fail --silent --show-error https://hmcl-helper.cn/ > /dev/null
