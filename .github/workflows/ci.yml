@@ -53,16 +53,23 @@ jobs:
 
       - name: Deploy dist to server
         if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
-        uses: appleboy/scp-action@ff85246acaad7bdce478db94a363cd2bf7c90345 # v1.0.0
-        with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USER }}
-          password: ${{ secrets.SERVER_PASSWORD }}
-          source: "docs/.vitepress/dist/*"
-          target: "/var/www/hmcl-helper"
-          strip_components: 3
-          overwrite: true
-          command_timeout: 20m
+        env:
+          SERVER_HOST: ${{ secrets.SERVER_HOST }}
+          SERVER_USER: ${{ secrets.SERVER_USER }}
+          SSHPASS: ${{ secrets.SERVER_PASSWORD }}
+        run: |
+          if ! command -v sshpass >/dev/null || ! command -v rsync >/dev/null; then
+            sudo apt-get update -qq
+            sudo apt-get install -y --no-install-recommends sshpass rsync
+          fi
+          destination="$SERVER_USER@$SERVER_HOST"
+          options=(-o StrictHostKeyChecking=accept-new -o ConnectTimeout=20 -o ServerAliveInterval=15 -o ServerAliveCountMax=3)
+          timeout 180s sshpass -e ssh "${options[@]}" "$destination" \
+            'command -v rsync >/dev/null || { apt-get update -qq && apt-get install -y --no-install-recommends rsync; }'
+          export RSYNC_RSH='sshpass -e ssh -o StrictHostKeyChecking=accept-new -o ConnectTimeout=20 -o ServerAliveInterval=15 -o ServerAliveCountMax=3'
+          timeout --kill-after=15s 900s rsync --recursive --links --times --checksum --compress \
+            --delay-updates --itemize-changes --timeout=120 \
+            docs/.vitepress/dist/ "$destination:/var/www/hmcl-helper/"
 
       - name: Verify deployed version
         if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
