@@ -8,6 +8,13 @@ export default defineConfig({
   title: "HMCL-Helper",
   head: [
     ["link", { rel: "icon", type: "image/svg+xml", href: "/1.png" }],
+    [
+      "link",
+      {
+        rel: "stylesheet",
+        href: "https://cdn.jsdelivr.net/npm/viewerjs@1.15.2/dist/viewer.min.css",
+      },
+    ],
   ],
   description: "HMCL-Helper documentation site",
   cleanUrls: true,

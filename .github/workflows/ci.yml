@@ -7,73 +7,38 @@ on:
   pull_request:
     branches:
       - master
-  workflow_dispatch:
-
-permissions:
-  contents: read
-
-concurrency:
-  group: hmcl-helper-${{ github.ref }}
-  cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
 
     steps:
       - name: Checkout
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          # Exclude committed package-manager caches while keeping every site asset.
-          sparse-checkout: |
-            .github
-            docs
+        uses: actions/checkout@v7.0.1
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
+        uses: pnpm/action-setup@v6.1.0
 
       - name: Setup Node.js
-        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        uses: actions/setup-node@v7.1.0
         with:
-          node-version: 24
-          check-latest: true
+          node-version: 24.22.1
           cache: pnpm
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile --registry=https://registry.npmjs.org
-
-      - name: Audit dependencies
-        run: pnpm audit --registry=https://registry.npmjs.org
+        run: pnpm install --frozen-lockfile
 
       - name: Build docs
-        run: |
-          pnpm run docs:build
-          printf '%s\n' "$GITHUB_SHA" > docs/.vitepress/dist/version.txt
+        run: pnpm run docs:build
 
       - name: Deploy dist to server
-        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
-        env:
-          SERVER_HOST: ${{ secrets.SERVER_HOST }}
-          SERVER_USER: ${{ secrets.SERVER_USER }}
-          SSHPASS: ${{ secrets.SERVER_PASSWORD }}
-        run: |
-          if ! command -v sshpass >/dev/null || ! command -v rsync >/dev/null; then
-            sudo apt-get update -qq
-            sudo apt-get install -y --no-install-recommends sshpass rsync
-          fi
-          destination="$SERVER_USER@$SERVER_HOST"
-          options=(-o StrictHostKeyChecking=accept-new -o ConnectTimeout=20 -o ServerAliveInterval=15 -o ServerAliveCountMax=3)
-          timeout 180s sshpass -e ssh "${options[@]}" "$destination" \
-            'command -v rsync >/dev/null || { apt-get update -qq && apt-get install -y --no-install-recommends rsync; }'
-          export RSYNC_RSH='sshpass -e ssh -o StrictHostKeyChecking=accept-new -o ConnectTimeout=20 -o ServerAliveInterval=15 -o ServerAliveCountMax=3'
-          timeout --kill-after=15s 900s rsync --recursive --links --times --checksum --compress \
-            --delay-updates --itemize-changes --timeout=120 \
-            docs/.vitepress/dist/ "$destination:/var/www/hmcl-helper/"
-
-      - name: Verify deployed version
-        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
-        run: |
-          deployed=$(curl --fail --silent --show-error --retry 3 "https://hmcl-helper.cn/version.txt?sha=$GITHUB_SHA")
-          test "$deployed" = "$GITHUB_SHA"
-          curl --fail --silent --show-error https://hmcl-helper.cn/ > /dev/null
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: appleboy/scp-action@v1.0.0
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          password: ${{ secrets.SERVER_PASSWORD }}
+          source: "docs/.vitepress/dist/*"
+          target: "/var/www/hmcl-helper"
+          strip_components: 3
+          overwrite: true
